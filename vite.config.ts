@@ -3,8 +3,15 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
   base: "/office/",
+
+  // Generate a static website for GitHub Pages
+  nitro: {
+    preset: "github-pages",
+  },
+
   tanstackStart: {
     server: { entry: "server" },
+
     prerender: {
       enabled: true,
       crawlLinks: true,
@@ -12,6 +19,7 @@ export default defineConfig({
       autoSubfolderIndex: true,
       failOnError: true,
     },
+
     pages: [
       {
         path: "/",
