@@ -1,4 +1,8 @@
+
 import type { ReactNode } from "react";
+
+const HOME_URL = "/office/";
+const BLOG_URL = "/office/blog/";
 
 export function SiteLayout({ children }: { children: ReactNode }) {
   return (
@@ -6,10 +10,8 @@ export function SiteLayout({ children }: { children: ReactNode }) {
       <header className="sticky top-0 z-40 border-b border-border/70 bg-background/80 backdrop-blur-md">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
           <a
-            className="flex items-center gap-2.5 active"
-            href="/"
-            data-status="active"
-            aria-current="page"
+            className="flex items-center gap-2.5"
+            href={HOME_URL}
           >
             <span className="grid h-9 w-9 place-items-center rounded-lg bg-primary text-primary-foreground shadow-sm">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -23,20 +25,22 @@ export function SiteLayout({ children }: { children: ReactNode }) {
               Office Nex<span className="text-muted-foreground"> Gen</span>
             </span>
           </a>
+
           <nav className="hidden items-center gap-1 md:flex">
             <a
-              href="/"
+              href={HOME_URL}
               className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
             >
               Setup Guide
             </a>
             <a
-              href="/blog"
+              href={BLOG_URL}
               className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
             >
               Blog
             </a>
           </nav>
+
           <a
             href="https://account.microsoft.com/services"
             target="_blank"
@@ -60,7 +64,9 @@ export function SiteLayout({ children }: { children: ReactNode }) {
           </a>
         </div>
       </header>
+
       <main className="flex-1">{children}</main>
+
       <footer className="mt-20 border-t border-border bg-muted/30">
         <div className="mx-auto max-w-6xl px-4 py-12">
           <div className="grid gap-10 md:grid-cols-4">
@@ -76,18 +82,20 @@ export function SiteLayout({ children }: { children: ReactNode }) {
                 </span>
                 <span className="font-semibold tracking-tight">Office Nex Gen</span>
               </div>
+
               <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
                 A free, independent resource with plain-English guides for installing, signing in,
                 and activating Microsoft 365 and Office. We link you to the official Microsoft pages
                 so you always handle your account and downloads where they belong.
               </p>
             </div>
+
             <div>
               <h3 className="text-sm font-semibold">Guides</h3>
               <ul className="mt-4 space-y-2.5 text-sm">
                 <li>
                   <a
-                    href="/"
+                    href={HOME_URL}
                     className="text-muted-foreground transition-colors hover:text-foreground"
                   >
                     Setup Guide
@@ -95,7 +103,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
                 </li>
                 <li>
                   <a
-                    href="/blog"
+                    href={BLOG_URL}
                     className="text-muted-foreground transition-colors hover:text-foreground"
                   >
                     Blog &amp; Updates
@@ -103,6 +111,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
                 </li>
               </ul>
             </div>
+
             <div>
               <h3 className="text-sm font-semibold">Official resources</h3>
               <ul className="mt-4 space-y-2.5 text-sm">
@@ -149,6 +158,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
               </ul>
             </div>
           </div>
+
           <div className="mt-10 rounded-lg border border-border bg-background/60 p-4 text-xs leading-relaxed text-muted-foreground">
             <strong className="font-semibold text-foreground">Disclaimer:</strong> Office Nex Gen
             is an independent, unofficial help website. We are not affiliated with, endorsed by, or
@@ -157,6 +167,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
             product key redemption, downloads, and sign-in happen on official microsoft.com pages
             that we link to — we never ask for your password or process payments.
           </div>
+
           <p className="mt-6 text-xs text-muted-foreground">
             © 2026 Office Nex Gen. Independent educational resource.
           </p>
