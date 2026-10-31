@@ -8,8 +8,19 @@ export default defineConfig({
     prerender: {
       enabled: true,
       crawlLinks: true,
+      autoStaticPathsDiscovery: true,
       autoSubfolderIndex: true,
       failOnError: true,
     },
+    pages: [
+      {
+        path: "/",
+        prerender: { enabled: true },
+      },
+      {
+        path: "/blog",
+        prerender: { enabled: true },
+      },
+    ],
   },
 });
